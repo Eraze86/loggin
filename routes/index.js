@@ -30,7 +30,7 @@ user.push(newUser)
 
 //spara
 
-fs.writeFile("users.json", JSON.stringify(newUser), (err) => {
+fs.writeFile("users.json", JSON.stringify(newUser, null, 2), (err) => {
   if(err){
     console.log("hell no", err)
   }
