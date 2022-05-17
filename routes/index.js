@@ -25,18 +25,20 @@ if(err){
 }
 //hämta
 let user = JSON.parse(data);
-console.log(user.passWord)
 
-if(user.userName == req.body.userName && user.passWord ===req.body.passWord){
-  
+for (let i = 0; i < user.length; i++) {
+
+if(user[i].userName == req.body.userName && user[i].passWord ===req.body.passWord){
   console.log("du är inloggad")
-  // let loggedIn = `du är inloggad`
-  // res.send(loggedIn)
+  let loggedIn = `du är inloggad`
+  res.send(loggedIn)
+}else{
+  console.log("nehe")
 }
- console.log("där blev de fel")
 
+}
   })
-  
+ 
 })
 
 router.post("/addUser", function(req, res){
