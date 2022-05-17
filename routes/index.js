@@ -25,13 +25,16 @@ if(err){
 }
 //hämta
 let user = JSON.parse(data);
+console.log(user.passWord)
 
-if(user.userName == req.body.userName && user.passWord == req.body.passWord){
-  let loggedIn = `du är inloggad`
-  res.send(loggedIn)
-}else{
-  console.log("där blev de fel")
+if(user.userName == req.body.userName && user.passWord ===req.body.passWord){
+  
+  console.log("du är inloggad")
+  // let loggedIn = `du är inloggad`
+  // res.send(loggedIn)
 }
+ console.log("där blev de fel")
+
   })
   
 })
@@ -58,7 +61,7 @@ fs.writeFile("users.json", JSON.stringify(user, null, 2), (err) => {
     console.log("hell no", err)
   }
 })
-res.redirect("/loggedIn")
+res.redirect("/")
   })
   
 })
